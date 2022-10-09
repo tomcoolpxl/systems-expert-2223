@@ -32,16 +32,12 @@ https://github.com/wikitops/example-voting-app
 1. Delete the ReplicaSet deployed in the previous module exercise
 2. Develop the Deployment yaml file to deploy the Voting App microservices.
 3. Update the vote Deployment to attach two environment variables:
-
-- Name the first OPTION_A, her value has to be CATS
-- Name the second OPTION_B, her value has to be DOGS
-
+   - Name the first OPTION_A, her value has to be CATS
+   - Name the second OPTION_B, her value has to be DOGS
 6. Update the db, result and worker Deployment to attach three environment variables:
-
-- Name the first POSTGRES_NAME, her value has to be "voting"
-- Name the second POSTGRES_USER, her value has to be "voting"
-- Name the third POSTGRES_PASSWORD, her value has to be "password"
-
+   - Name the first POSTGRES_NAME, her value has to be "voting"
+   - Name the second POSTGRES_USER, her value has to be "voting"
+   - Name the third POSTGRES_PASSWORD, her value has to be "password"
 7. Ensure each Pods are up and running
 
 ## Services
@@ -60,31 +56,25 @@ https://github.com/wikitops/example-voting-app
 2. Create a ConfigMaps resource to externalize some part of the vote Pods :
 3. Name the ConfigMaps vote
 4. The ConfigMaps must manage those data:
-
-- option_a: "CATS"
-- option_b: "DOGS"
-
+   - option_a: "CATS"
+   - option_b: "DOGS"
 5. Update the Deployment of the vote Pods to attach the ConfigMaps as environment variables:
-
-- The name of the option_a environment variable has to be OPTION_A
-- The name of the option_b environment variable has to be OPTION_B
+   - The name of the option_a environment variable has to be OPTION_A
+   - The name of the option_b environment variable has to be OPTION_B
 
 ## Secrets
 
 1. Delete the db, result and worker Deployment to be able to update the Secrets management
 2. Create a Secrets resource to externalize some part of the vote Pods:
-
-- Named the Secrets db
-- The Secrets must manage those data:
-  - name: voting
-  - password: mypassword
-  - user: voting
-
+   - Named the Secrets db
+   - The Secrets must manage those data:
+     - name: voting
+     - password: mypassword
+     - user: voting
 3. Update the Deployment of the vote Pods to attach the Secrets as environment variables:
-
-- The name of the name environment variable has to be POSTGRESQL_DATABASE
-- The name of the password environment variable has to be POSTGRESQL_PASSWORD
-- The name of the user environment variable has to be POSTGRESQL_USERNAME
+   - The name of the name environment variable has to be POSTGRESQL_DATABASE
+   - The name of the password environment variable has to be POSTGRESQL_PASSWORD
+   - The name of the user environment variable has to be POSTGRESQL_USERNAME
 
 ## Volumes
 
