@@ -44,3 +44,7 @@ De volgende technologieën worden gebruikt:
 ### Extra 4
 
 - De frontend Dockerfile gebruikt een build stage om een efficiënter container image te bekomen.
+
+### Extra 5
+
+- Gebruik een non-default Namespace voor al je objecten.
