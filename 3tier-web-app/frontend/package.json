@@ -24,7 +24,7 @@
       "react-app/jest"
     ]
   },
-  "proxy": "http://flask-service:4000",
+  "proxy": "http://flask-service:5000",
   "browserslist": {
     "production": [
       ">0.2%",
