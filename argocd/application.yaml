@@ -7,9 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/systemsexpert-pxl/selabs.git
+    repoURL: https://github.com/tomcoolpxl/systems-expert-2223.git
     targetRevision: HEAD
-    path: cicd/argocd/dev
+    path: argocd/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: simplewebservice
