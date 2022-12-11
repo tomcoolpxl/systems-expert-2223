@@ -1,0 +1,25 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2beta2
+metadata:
+  name: sampleapp
+  namespace: scalingtest
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sampleapp
+  minReplicas: 1
+  maxReplicas: 20
+  metrics:
+  # Scale based on request latency, Linkerd-proxy metric
+  - type: Object
+    object:
+      metric:
+        name: response_latency_ms_99th
+      describedObject:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: sampleapp
+      target:
+        type: AverageValue
+        averageValue: 1000000m # 1s
